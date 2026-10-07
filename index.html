@@ -927,6 +927,8 @@
       populateDrugDropdown();
       calculateCrCl();
       calculate();
+      calculateMonitoring();
+
     });
 
     function setupEventListeners() {
@@ -936,6 +938,21 @@
           calculate();
         });
       });
+      ['hr','sbp','dbp'].forEach(id => {
+
+  const el = document.getElementById(id);
+
+  if(el){
+
+    el.addEventListener(
+      'input',
+      calculateMonitoring
+    );
+
+  }
+
+});
+
       document.querySelectorAll('input[name="scr-unit"]').forEach(r => {
         r.addEventListener('change', () => {
           calculateCrCl();
@@ -1462,6 +1479,45 @@ function renderActiveDrugList(){
     });
 
 }
+function calculateMonitoring(){
+
+    const hr =
+      parseFloat(document.getElementById('hr')?.value) || 0;
+
+    const sbp =
+      parseFloat(document.getElementById('sbp')?.value) || 0;
+
+    const dbp =
+      parseFloat(document.getElementById('dbp')?.value) || 0;
+
+    // MAP
+    if(sbp && dbp){
+
+        const map =
+          (sbp + (2 * dbp)) / 3;
+
+        document.getElementById(
+          'map-output'
+        ).textContent =
+          map.toFixed(0);
+
+    }
+
+    // Shock Index
+    if(hr && sbp){
+
+        const shock =
+          hr / sbp;
+
+        document.getElementById(
+          'shock-index'
+        ).textContent =
+          shock.toFixed(2);
+
+    }
+
+}// ACTION FUNCTIONS
+
 
     // ==========================================
     // ACTION FUNCTIONS: EXPORT, SAVE, SHARE, PRINT
