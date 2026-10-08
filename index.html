@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -836,6 +838,27 @@
     <!-- RIGHT COLUMN: CALCULATORS & ANTIMICROBIALS -->
     <div class="lg:col-span-8 space-y-6">
 
+Active ICU Medications
+        </h3>
+
+        <button
+            onclick="addCurrentDrug()"
+            class="bg-sky-600 hover:bg-sky-500 px-3 py-1.5 rounded-lg text-xs font-semibold">
+
+            ➕ Add Current Drug
+
+        </button>
+
+    </div>
+
+    <div
+        id="active-drugs-list"
+        class="space-y-2">
+
+    </div>
+
+</div>
+
       <!-- MAIN CALCULATOR -->
       <div class="bg-slate-800 rounded-xl border border-slate-700 p-5 shadow-lg">
         
@@ -908,27 +931,8 @@
 
         <h3 class="text-sm font-bold text-sky-300">
             <i class="fa-solid fa-notes-medical mr-2"></i>
-            Active ICU Medications
-        </h3>
 
-        <button
-            onclick="addCurrentDrug()"
-            class="bg-sky-600 hover:bg-sky-500 px-3 py-1.5 rounded-lg text-xs font-semibold">
-
-            ➕ Add Current Drug
-
-        </button>
-
-    </div>
-
-    <div
-        id="active-drugs-list"
-        class="space-y-2">
-
-    </div>
-
-</div>
-
+           
         <!-- DRUG SELECTION & STRENGTH -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           <div>
