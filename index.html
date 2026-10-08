@@ -688,7 +688,8 @@
 
 </select>
 
-  /div>
+  </div>
+
 
   <div class="bg-slate-900 rounded-lg p-3">
 
@@ -722,51 +723,69 @@
 
     <div>
       <label>VTI Pre-PLR</label>
+
+VTI Pre-PLR</label>
+
 <input
-  class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white">
+ id="vti-pre"
+ class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white">
 
     </div>
 
     <div>
-      <label>VTI Post-PLR</label>
-      <input
-  class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white">
+    <label>VTI Post-PLR</label>
+
+VTI Post-PLR</label>
+
+<input
+ id="vti-post"
+ class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white">
 
     </div>
-
+    
     <div>
-      <label>SV Pre-PLR</label>
-      <input
-  class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white">
+      
+<label>SV Pre-PLR</label>
 
+SV Pre-PLR</label>
 
+<input
+ id="sv-pre"
+ class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white">
+      
     </div>
-
+    
     <div>
+      
       <label>SV Post-PLR</label>
+      
+   SV Post-PLR</label>
       <input
+        id="sv-post"
   class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white">
-
 
     </div>
 
     <div>
+      
       <label>CO Pre-PLR</label>
-      <input
+      
+    CO Post-PLR</label>
+      <input"co-pre"
   class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white">
 
     </div>
 
     <div>
-      <label>CO Post-PLR</label>
-      <input
+  <label>CO Post-PLR</label>
+
+      CO Post-PLR</label>
+      <input"co-post"
   class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white">
 
     </div>
 
   </div>
-
-</div>
 
   </div>
 <div class="grid grid-cols-3 gap-3 mt-3">
@@ -1316,7 +1335,22 @@
           calculate();
         });
       });
-      ['hr','sbp','dbp'].forEach(id => {
+
+[
+ 'hr',
+ 'sbp',
+ 'dbp',
+ 'spo2',
+ 'fio2',
+ 'rr',
+ 'pao2',
+ 'vti-pre',
+ 'vti-post',
+ 'sv-pre',
+ 'sv-post',
+ 'co-pre',
+ 'co-post'
+].forEach(id => {
 
   const el = document.getElementById(id);
 
