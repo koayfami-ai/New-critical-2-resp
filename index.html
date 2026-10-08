@@ -1,6 +1,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -331,127 +333,30 @@
         </div>
       </div>
 
-
-
 <!-- CARD 2 : RESPIRATORY & HAEMODYNAMIC MONITORING -->
 
 <div class="bg-slate-800 rounded-xl border border-slate-700 p-5 shadow-lg">
 
-  <h3 class="text-sm font-bold text-sky-400 border-b border-slate-700 pb-2 mb-3">
+  <h3 class="text-sm font-bold text-sky-400 border-b border-slate-700 pb-2 mb-4">
 
     <i class="fa-solid fa-heart-pulse mr-2"></i>
-</h3>
 
     Respiratory & Haemodynamic Monitoring
 
+  </h3>
+
   <div class="grid grid-cols-2 gap-3">
 
-  <div>
-    <label class="block text-xs font-medium text-slate-300 mb-1">
-      Heart Rate
-    </label>
-
-    <input
-      id="hr"
-      type="number"
-      placeholder="120"
-      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
-
-   </div>
-
-</div>
-
-<div class="grid grid-cols-2 gap-3 mt-3">
-
-  <div>
-    <label class="block text-xs font-medium text-slate-300 mb-1">
-      SBP
-    </label>
-
-    <input
-      id="sbp"
-      type="number"
-      placeholder="90"
-      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
-
-   </div>
-
-  </div>
-
-  <div>
-    <label class="block text-xs font-medium text-slate-300 mb-1">
-      DBP
-    </label>
-
-    <input
-      id="dbp"
-      type="number"
-      placeholder="60"
-      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
-  </div>
-
-</div>
-
-<div class="grid grid-cols-2 gap-3 mt-3">
-
-  <div class="bg-slate-900 border border-slate-700 rounded-lg p-3">
-
-    <div class="text-xs text-slate-400">
-      Calculated MAP
-    </div>
-
-    <div
-      id="map-output"
-      class="text-lg font-bold text-emerald-400">
-
-      --
-
-    </div>
-
-  </div>
-
-  <div class="bg-slate-900 border border-slate-700 rounded-lg p-3">
-
-    <div class="text-xs text-slate-400">
-      Shock Index
-    </div>
-
-    <div
-      id="shock-index"
-      class="text-lg font-bold text-amber-400">
-
-      --
-
-    </div>
-
-  </div>
-
-</div>
-
-  <div class="grid grid-cols-3 gap-3 mt-3">
-
     <div>
       <label class="block text-xs text-slate-300 mb-1">
-        SpO₂
+        Heart Rate
       </label>
 
       <input
-        id="spo2"
+        id="hr"
         type="number"
-        placeholder="95"
-        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
-    </div>
-
-    <div>
-      <label class="block text-xs text-slate-300 mb-1">
-        FiO₂ (%)
-      </label>
-
-      <input
-        id="fio2"
-        type="number"
-        placeholder="60"
-        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
+        placeholder="120"
+        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
     </div>
 
     <div>
@@ -463,13 +368,58 @@
         id="rr"
         type="number"
         placeholder="28"
-        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
+        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
     </div>
 
+  </div>
 
   <div class="grid grid-cols-2 gap-3 mt-3">
 
-    <div class="bg-slate-800 rounded p-3 border border-slate-700">
+    <div>
+      <label class="block text-xs text-slate-300 mb-1">
+        SBP
+      </label>
+
+      <input
+        id="sbp"
+        type="number"
+        placeholder="90"
+        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
+    </div>
+
+    <div>
+      <label class="block text-xs text-slate-300 mb-1">
+        DBP
+      </label>
+
+      <input
+        id="dbp"
+        type="number"
+        placeholder="60"
+        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
+    </div>
+
+  </div>
+
+  <div class="grid grid-cols-2 gap-3 mt-3">
+
+    <div class="bg-slate-900 border border-slate-700 rounded-lg p-3">
+
+      <div class="text-xs text-slate-400">
+        Calculated MAP
+      </div>
+
+      <div
+        id="map-output"
+        class="text-lg font-bold text-emerald-400">
+
+        --
+
+      </div>
+
+    </div>
+
+    <div class="bg-slate-900 border border-slate-700 rounded-lg p-3">
 
       <div class="text-xs text-slate-400">
         Shock Index
@@ -477,12 +427,47 @@
 
       <div
         id="shock-index"
-        class="text-lg font-bold text-amber-300">
+        class="text-lg font-bold text-amber-400">
 
         --
+
       </div>
 
-    <div class="bg-slate-800 rounded p-3 border border-slate-700">
+    </div>
+
+  </div>
+
+  <div class="grid grid-cols-2 gap-3 mt-3">
+
+    <div>
+      <label class="block text-xs text-slate-300 mb-1">
+        SpO₂
+      </label>
+
+      <input
+        id="spo2"
+        type="number"
+        placeholder="95"
+        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
+    </div>
+
+    <div>
+      <label class="block text-xs text-slate-300 mb-1">
+        FiO₂ (%)
+      </label>
+
+      <input
+        id="fio2"
+        type="number"
+        placeholder="60"
+        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
+    </div>
+
+  </div>
+
+  <div class="grid grid-cols-2 gap-3 mt-3">
+
+    <div class="bg-slate-900 border border-slate-700 rounded-lg p-3">
 
       <div class="text-xs text-slate-400">
         ROX Score
@@ -490,10 +475,37 @@
 
       <div
         id="rox-score"
-        class="text-lg font-bold text-sky-300">
+        class="text-lg font-bold text-sky-400">
 
         --
+
       </div>
+
+    </div>
+
+    <div class="bg-slate-900 border border-slate-700 rounded-lg p-3">
+
+      <div class="text-xs text-slate-400">
+        P/F Ratio
+      </div>
+
+      <div
+        id="pf-ratio"
+        class="text-lg font-bold text-purple-400">
+
+        --
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+       
 <!-- CARD 3 : POCUS MONITORING -->
 
 <div class="bg-slate-800 rounded-xl border border-slate-700 p-5 shadow-lg">
@@ -837,25 +849,6 @@
 
     <!-- RIGHT COLUMN: CALCULATORS & ANTIMICROBIALS -->
     <div class="lg:col-span-8 space-y-6">
-
-Active ICU Medications
-        </h3>
-
-        <button
-            onclick="addCurrentDrug()"
-            class="bg-sky-600 hover:bg-sky-500 px-3 py-1.5 rounded-lg text-xs font-semibold">
-
-            ➕ Add Current Drug
-
-        </button>
-
-    </div>
-
-    <div
-        id="active-drugs-list"
-        class="space-y-2">
-
-    </div>
 
 </div>
 
