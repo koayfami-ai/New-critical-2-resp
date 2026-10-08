@@ -175,11 +175,6 @@
       class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
   </div>
 
-  <div>
-    <label class="block text-xs font-medium text-slate-300 mb-1">
-      Target SpO₂ (%)
-    </label>
-
     <input
       id="target-spo2"
       type="number"
@@ -208,61 +203,9 @@
 
   </div>
 
-  <div>
-    <label class="block text-xs font-medium text-slate-300 mb-1">
-      Highest O₂ Support
-    </label>
-
-    <select
-      id="highest-o2"
-      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
-
-      <option>Room Air</option>
-      <option>Nasal Cannula</option>
-      <option>Simple Mask</option>
-      <option>Venturi Mask</option>
-      <option>NRBM</option>
-      <option>HFNC</option>
-      <option>NIV / BiPAP</option>
-      <option>Intubated</option>
-
-    </select>
-
   </div>
 
-<div class="grid grid-cols-2 gap-3">
-
-  <div>
-    <label class="block text-xs font-medium text-slate-300 mb-1">
-      Highest FiO₂ (%)
-    </label>
-
-    <input
-      id="highest-fio2"
-      type="number"
-      min="21"
-      max="100"
-      value="21"
-      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
   </div>
-
-  <div>
-    <label class="block text-xs font-medium text-slate-300 mb-1">
-      Peri-Intubation Arrest
-    </label>
-
-    <select
-      id="peri-arrest"
-      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
-
-      <option>No</option>
-      <option>Yes</option>
-
-    </select>
-
-  </div>
-
-
 
   <div>
     <label class="block text-xs font-medium text-slate-300 mb-1">
@@ -281,7 +224,16 @@
       <option>NIV</option>
       <option>Intubated</option>
 
-    </select>
+<div class="grid grid-cols-2 gap-3">
+
+    <input
+      id="highest-fio2"
+      type="number"
+      min="21"
+      max="100"
+      value="21"
+      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
+
   </div>
 
 </div>
@@ -307,7 +259,6 @@
 
   </div>
 
-</div>
 
           <div>
             <div class="flex justify-between items-center mb-1">
