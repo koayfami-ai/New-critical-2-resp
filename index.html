@@ -816,6 +816,63 @@
   </div>
 
 </div>
+<!-- CARD 4 : ACTIVE MEDICATIONS -->
+
+<div class="bg-slate-800 rounded-xl border border-slate-700 p-5 shadow-lg">
+
+  <h3 class="text-sm font-bold text-emerald-400 border-b border-slate-700 pb-2 mb-3">
+
+      💊 Active Medications
+
+  </h3>
+
+  <div class="grid grid-cols-2 gap-3">
+
+    <div>
+      <label class="block text-xs font-medium text-slate-300 mb-1">
+        Medication
+      </label>
+
+      <input
+        id="active-drug"
+        type="text"
+        placeholder="Noradrenaline"
+        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
+    </div>
+
+    <div>
+      <label class="block text-xs font-medium text-slate-300 mb-1">
+        Dose / Setup
+      </label>
+
+      <input
+        id="active-dose"
+        type="text"
+        placeholder="0.1 mcg/kg/min"
+        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
+    </div>
+
+  </div>
+
+  <div class="mt-3">
+
+    <button
+      onclick="addMedication()"
+      class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-2 rounded-lg text-xs font-semibold">
+
+      ➕ Add Medication
+
+    </button>
+
+  </div>
+
+  <div
+    id="medication-list"
+    class="mt-4 space-y-2">
+
+  </div>
+
+</div>
 
       <!-- INOTROPES AND VASOPRESSORS DOSAGE RANGE QUICK REFERENCE -->
       <div class="bg-slate-800 rounded-xl border border-slate-700 p-5 shadow-lg">
@@ -1839,6 +1896,81 @@ function calculateMonitoring(){
           shock.toFixed(2);
 
     }
+let activeMedications = [];
+
+function addMedication(){
+
+    const drug =
+      document.getElementById('active-drug').value;
+
+    const dose =
+      document.getElementById('active-dose').value;
+
+    if(!drug) return;
+
+    activeMedications.push({
+        drug,
+        dose
+    });
+
+    renderMedications();
+
+    document.getElementById('active-drug').value = '';
+    document.getElementById('active-dose').value = '';
+}
+
+function removeMedication(index){
+
+    activeMedications.splice(index,1);
+
+    renderMedications();
+
+}
+
+function renderMedications(){
+
+    const list =
+      document.getElementById('medication-list');
+
+    list.innerHTML = '';
+
+    activeMedications.forEach((med,index)=>{
+
+        list.innerHTML += `
+
+        <div class="bg-slate-900 border border-slate-700 rounded-lg p-3">
+
+          <div class="flex justify-between items-start">
+
+            <div>
+
+              <div class="font-semibold text-emerald-300">
+                ${med.drug}
+              </div>
+
+              <div class="text-xs text-slate-400 mt-1">
+                ${med.dose}
+              </div>
+
+            </div>
+
+            <button
+              onclick="removeMedication(${index})"
+              class="text-rose-400 hover:text-rose-300">
+
+              <i class="fa-solid fa-trash"></i>
+
+            </button>
+
+          </div>
+
+        </div>
+        `;
+
+    });
+
+}
+
 
 }// ACTION FUNCTIONS
 
