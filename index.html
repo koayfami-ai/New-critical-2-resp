@@ -757,6 +757,48 @@ if(pao2 && fio2){
 </div>
 
   </div>
+<div class="grid grid-cols-3 gap-3 mt-3">
+
+  <div>
+
+    <label class="block text-xs text-slate-400 mb-1">
+      ΔVTI %
+    </label>
+
+    <input
+      id="delta-vti"
+      readonly
+      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
+
+  </div>
+
+  <div>
+
+    <label class="block text-xs text-slate-400 mb-1">
+      ΔSV %
+    </label>
+
+    <input
+      id="delta-sv"
+      readonly
+      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
+
+  </div>
+
+  <div>
+
+    <label class="block text-xs text-slate-400 mb-1">
+      ΔCO %
+    </label>
+
+    <input
+      id="delta-co"
+      readonly
+      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
+
+  </div>
+
+</div>
 
   <!-- FINAL IMPRESSION -->
 
@@ -1857,6 +1899,57 @@ if(spo2 && fio2 && rr){
       'rox-score'
     ).textContent =
       rox.toFixed(2);
+
+}
+const vtiPre =
+  parseFloat(document.getElementById('vti-pre')?.value) || 0;
+
+const vtiPost =
+  parseFloat(document.getElementById('vti-post')?.value) || 0;
+
+if(vtiPre && vtiPost){
+
+  const delta =
+    ((vtiPost - vtiPre) / vtiPre) * 100;
+
+  document.getElementById(
+    'delta-vti'
+  ).value =
+    delta.toFixed(1);
+
+}
+const svPre =
+  parseFloat(document.getElementById('sv-pre')?.value) || 0;
+
+const svPost =
+  parseFloat(document.getElementById('sv-post')?.value) || 0;
+
+if(svPre && svPost){
+
+  const delta =
+    ((svPost - svPre) / svPre) * 100;
+
+  document.getElementById(
+    'delta-sv'
+  ).value =
+    delta.toFixed(1);
+
+}
+const coPre =
+  parseFloat(document.getElementById('co-pre')?.value) || 0;
+
+const coPost =
+  parseFloat(document.getElementById('co-post')?.value) || 0;
+
+if(coPre && coPost){
+
+  const delta =
+    ((coPost - coPre) / coPre) * 100;
+
+  document.getElementById(
+    'delta-co'
+  ).value =
+    delta.toFixed(1);
 
 }
 
