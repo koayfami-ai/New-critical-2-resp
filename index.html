@@ -449,12 +449,95 @@
       </div>
 
     </div>
+<div class="grid grid-cols-2 gap-3 mt-3">
 
+  <div>
+    <label class="block text-xs text-slate-300 mb-1">
+      PaO₂
+    </label>
+
+    <input
+      id="pao2"
+      type="number"
+      placeholder="80"
+      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
+  </div>
+
+  <div>
+    <label class="block text-xs text-slate-300 mb-1">
+      PaCO₂
+    </label>
+
+    <input
+      id="paco2"
+      type="number"
+      placeholder="40"
+      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
   </div>
 
 </div>
 
+<div class="grid grid-cols-2 gap-3 mt-3">
 
+  <div>
+    <label class="block text-xs text-slate-300 mb-1">
+      HCO₃⁻
+    </label>
+
+    <input
+      id="hco3"
+      type="number"
+      placeholder="24"
+      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
+  </div>
+
+  <div>
+    <label class="block text-xs text-slate-300 mb-1">
+      Base Excess
+    </label>
+
+    <input
+      id="be"
+      type="number"
+      step="0.1"
+      placeholder="0"
+      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
+  </div>
+
+</div>
+
+<div class="mt-3">
+
+  <label class="block text-xs text-slate-300 mb-1">
+    pH
+  </label>
+
+  <input
+    id="ph"
+    type="number"
+    step="0.01"
+    placeholder="7.40"
+    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2">
+
+</div>
+
+  </div>
+
+</div>
+const pao2 =
+  parseFloat(document.getElementById('pao2')?.value) || 0;
+
+if(pao2 && fio2){
+
+    const pf =
+      pao2 / (fio2 / 100);
+
+    document.getElementById(
+      'pf-ratio'
+    ).textContent =
+      pf.toFixed(0);
+
+}
 
        
 <!-- CARD 3 : POCUS MONITORING -->
@@ -584,33 +667,30 @@
       Admission
     </div>
 
-    Hepatic Vein
-    <select>Normal/Mild/Moderate/Severe</select>
+<select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
 
-    Portal Vein
-    <select>Normal/Mild/Moderate/Severe</select>
-
-    Renal Vein
-    <select>Normal/Mild/Moderate/Severe</select>
-
-  </div>
-
-  <div class="bg-slate-900 rounded-lg p-3 mb-3">
+  <option>Normal</option>
+  <option>Mild</option>
+  <option>Moderate</option>
+  <option>Severe</option>
+  
+</select>
+    
+<div class="bg-slate-900 rounded-lg p-3">
 
     <div class="font-semibold text-amber-300 mb-2">
-      Ward
+      ward
     </div>
+<select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
 
-    Hepatic Vein
-    <select>Normal/Mild/Moderate/Severe</select>
+  <option>Normal</option>
+  <option>Mild</option>
+  <option>Moderate</option>
+  <option>Severe</option>
 
-    Portal Vein
-    <select>Normal/Mild/Moderate/Severe</select>
+</select>
 
-    Renal Vein
-    <select>Normal/Mild/Moderate/Severe</select>
-
-  </div>
+  /div>
 
   <div class="bg-slate-900 rounded-lg p-3">
 
@@ -618,14 +698,15 @@
       Pre-Discharge
     </div>
 
-    Hepatic Vein
-    <select>Normal/Mild/Moderate/Severe</select>
+    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
 
-    Portal Vein
-    <select>Normal/Mild/Moderate/Severe</select>
+  <option>Normal</option>
+  <option>Mild</option>
+  <option>Moderate</option>
+  <option>Severe</option>
 
-    Renal Vein
-    <select>Normal/Mild/Moderate/Severe</select>
+</select>
+
 
   </div>
 
@@ -1758,6 +1839,27 @@ function calculateMonitoring(){
           shock.toFixed(2);
 
     }
+  const spo2 =
+  parseFloat(document.getElementById('spo2')?.value) || 0;
+
+const fio2 =
+  parseFloat(document.getElementById('fio2')?.value) || 0;
+
+const rr =
+  parseFloat(document.getElementById('rr')?.value) || 0;
+
+if(spo2 && fio2 && rr){
+
+    const rox =
+      ((spo2 / fio2) * 100) / rr;
+
+    document.getElementById(
+      'rox-score'
+    ).textContent =
+      rox.toFixed(2);
+
+}
+
 let activeMedications = [];
 
 function addMedication(){
