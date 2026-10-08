@@ -531,20 +531,6 @@
   </div>
 
 </div>
-const pao2 =
-  parseFloat(document.getElementById('pao2')?.value) || 0;
-
-if(pao2 && fio2){
-
-    const pf =
-      pao2 / (fio2 / 100);
-
-    document.getElementById(
-      'pf-ratio'
-    ).textContent =
-      pf.toFixed(0);
-
-}
 
        
 <!-- CARD 3 : POCUS MONITORING -->
@@ -688,6 +674,7 @@ if(pao2 && fio2){
     <div class="font-semibold text-amber-300 mb-2">
       ward
     </div>
+  
 <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
 
   <option>Normal</option>
@@ -1888,6 +1875,9 @@ function calculateMonitoring(){
           shock.toFixed(2);
 
     }
+
+  //Rox Score
+  
   const spo2 =
   parseFloat(document.getElementById('spo2')?.value) || 0;
 
@@ -1908,6 +1898,8 @@ if(spo2 && fio2 && rr){
       rox.toFixed(2);
 
 }
+
+  
 const vtiPre =
   parseFloat(document.getElementById('vti-pre')?.value) || 0;
 
@@ -1957,6 +1949,20 @@ if(coPre && coPost){
     'delta-co'
   ).value =
     delta.toFixed(1);
+
+}
+const pao2 =
+  parseFloat(document.getElementById('pao2')?.value) || 0;
+
+if(pao2 && fio2){
+
+    const pf =
+      pao2 / (fio2 / 100);
+
+    document.getElementById(
+      'pf-ratio'
+    ).textContent =
+      pf.toFixed(0);
 
 }
 
