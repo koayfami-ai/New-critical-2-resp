@@ -492,6 +492,330 @@
 
         --
       </div>
+<!-- CARD 3 : POCUS MONITORING -->
+
+<div class="bg-slate-800 rounded-xl border border-slate-700 p-5 shadow-lg">
+
+  <h3 class="text-sm font-bold text-amber-400 border-b border-slate-700 pb-2 mb-4">
+
+    🔍 POCUS Monitoring
+
+  </h3>
+
+  <!-- LUNG ULTRASOUND SCORE -->
+
+  <div class="mb-5">
+
+    <h4 class="text-xs font-bold text-slate-300 mb-2">
+      Lung Ultrasound Score (12 Zones)
+    </h4>
+
+    <div class="overflow-x-auto">
+
+      <table class="w-full text-xs text-center">
+
+        <thead class="text-slate-400">
+
+          <tr>
+            <th></th>
+            <th>Admission</th>
+            <th>Ward</th>
+            <th>Pre-Discharge</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td class="text-left font-semibold text-slate-300">
+              Total Score
+            </td>
+
+            <td>
+              <input
+                id="lus-admission"
+                type="number"
+                min="0"
+                max="36"
+                class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-center">
+            </td>
+
+            <td>
+              <input
+                id="lus-ward"
+                type="number"
+                min="0"
+                max="36"
+                class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-center">
+            </td>
+
+            <td>
+              <input
+                id="lus-discharge"
+                type="number"
+                min="0"
+                max="36"
+                class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-center">
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <p class="text-[11px] text-slate-500 mt-2">
+      Total score from 12 lung zones (6 zones each hemithorax)
+    </p>
+
+  </div>
+
+  <!-- IVC ASSESSMENT -->
+
+  <div class="mb-5">
+
+    <h4 class="text-xs font-bold text-slate-300 mb-2">
+      IVC Assessment
+    </h4>
+
+    <div class="grid grid-cols-2 gap-3">
+
+      <div>
+
+        <label class="block text-xs text-slate-400 mb-1">
+          IVC Diameter (cm)
+        </label>
+
+        <input
+          id="ivc-size"
+          type="number"
+          step="0.1"
+          placeholder="2.1"
+          class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
+
+      </div>
+
+      <div>
+
+        <label class="block text-xs text-slate-400 mb-1">
+          Collapsibility (%)
+        </label>
+
+        <input
+          id="ivc-collapse"
+          type="number"
+          placeholder="20"
+          class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm">
+
+      </div>
+
+    </div>
+
+    <p class="text-[11px] text-slate-500 mt-2">
+      If IVC > 2 cm, consider VExUS assessment
+    </p>
+
+  </div>
+
+  <!-- VEXUS -->
+
+  <div class="mb-5">
+
+    <h4 class="text-xs font-bold text-slate-300 mb-2">
+      VExUS Assessment
+    </h4>
+
+    <div class="overflow-x-auto">
+
+      <table class="w-full text-xs text-center">
+
+        <thead class="text-slate-400">
+
+          <tr>
+            <th></th>
+            <th>Admission</th>
+            <th>Ward</th>
+            <th>Pre-Discharge</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td class="text-left font-semibold text-slate-300">
+              Hepatic Vein
+            </td>
+
+            <td>
+              <select class="bg-slate-900 border border-slate-700 rounded px-2 py-1">
+                <option>Normal</option>
+                <option>Mild</option>
+                <option>Moderate</option>
+                <option>Severe</option>
+              </select>
+            </td>
+
+            <td>
+              <select class="bg-slate-900 border border-slate-700 rounded px-2 py-1">
+                <option>Normal</option>
+                <option>Mild</option>
+                <option>Moderate</option>
+                <option>Severe</option>
+              </select>
+            </td>
+
+            <td>
+              <select class="bg-slate-900 border border-slate-700 rounded px-2 py-1">
+                <option>Normal</option>
+                <option>Mild</option>
+                <option>Moderate</option>
+                <option>Severe</option>
+              </select>
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td class="text-left font-semibold text-slate-300">
+              Portal Vein
+            </td>
+
+            <td><select class="bg-slate-900 border border-slate-700 rounded px-2 py-1"><option>Normal</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></td>
+            <td><select class="bg-slate-900 border border-slate-700 rounded px-2 py-1"><option>Normal</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></td>
+            <td><select class="bg-slate-900 border border-slate-700 rounded px-2 py-1"><option>Normal</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></td>
+
+          </tr>
+
+          <tr>
+
+            <td class="text-left font-semibold text-slate-300">
+              Renal Vein
+            </td>
+
+            <td><select class="bg-slate-900 border border-slate-700 rounded px-2 py-1"><option>Normal</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></td>
+            <td><select class="bg-slate-900 border border-slate-700 rounded px-2 py-1"><option>Normal</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></td>
+            <td><select class="bg-slate-900 border border-slate-700 rounded px-2 py-1"><option>Normal</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <!-- FLUID RESPONSIVENESS -->
+
+  <div class="mb-5">
+
+    <h4 class="text-xs font-bold text-slate-300 mb-2">
+      Fluid Responsiveness
+    </h4>
+
+    <div class="overflow-x-auto">
+
+      <table class="w-full text-xs text-center">
+
+        <thead class="text-slate-400">
+
+          <tr>
+            <th></th>
+            <th>Pre-PLR</th>
+            <th>Post-PLR</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td class="text-left font-semibold text-slate-300">VTI</td>
+            <td><input id="vti-pre" type="number" step="0.1" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1"></td>
+            <td><input id="vti-post" type="number" step="0.1" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1"></td>
+          </tr>
+
+          <tr>
+            <td class="text-left font-semibold text-slate-300">Stroke Volume</td>
+            <td><input id="sv-pre" type="number" step="0.1" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1"></td>
+            <td><input id="sv-post" type="number" step="0.1" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1"></td>
+          </tr>
+
+          <tr>
+            <td class="text-left font-semibold text-slate-300">Cardiac Output</td>
+            <td><input id="co-pre" type="number" step="0.1" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1"></td>
+            <td><input id="co-post" type="number" step="0.1" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1"></td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 mt-3">
+
+      <div>
+
+        <label class="block text-xs text-slate-400 mb-1">
+          ΔVTI (%)
+        </label>
+
+        <input
+          id="delta-vti"
+          type="number"
+          step="0.1"
+          class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5">
+
+      </div>
+
+      <div>
+
+        <label class="block text-xs text-slate-400 mb-1">
+          PLR Response
+        </label>
+
+        <select
+          id="plr-response"
+          class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5">
+
+          <option>Positive</option>
+          <option>Negative</option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FINAL IMPRESSION -->
+
+  <div>
+
+    <label class="block text-xs font-medium text-slate-300 mb-1">
+      Overall POCUS Impression
+    </label>
+
+    <textarea
+      id="pocus-impression"
+      rows="4"
+      placeholder="Improving pulmonary oedema. Mild residual VExUS congestion. Fluid responsive."
+      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100">
+    </textarea>
+
+  </div>
+
+</div>
 
       <!-- INOTROPES AND VASOPRESSORS DOSAGE RANGE QUICK REFERENCE -->
       <div class="bg-slate-800 rounded-xl border border-slate-700 p-5 shadow-lg">
